@@ -1,17 +1,4 @@
-# Simple WebSocket Server 🎒
+# SimpleWebsocketServer
 
-> A simple WebSocket server written in TypesScript to use for YewChat.
-
-## Running Instruction
-
-1. Install the dependencies:
-
-```bash
-npm i
-```
-
-2. Run the server:
-
-```bash
-npm start
-```
+## Experiment 3.1: Original code
+![Original code server](assets/images/3.1:%20Original%20code%20[server%20terminal].png)
