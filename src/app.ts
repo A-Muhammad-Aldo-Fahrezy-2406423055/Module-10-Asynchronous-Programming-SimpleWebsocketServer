@@ -27,6 +27,12 @@ wss.on('connection', (ws: WebSocket) => {
             const parsed_data: Message = JSON.parse(raw_data);
             switch (parsed_data.messageType) {
                 case 'register':
+                    const existingUser = users.find((u) => u.nick === parsed_data.data);
+                    if (existingUser) {
+                        existingUser.ws.close();
+                    }
+                    users = users.filter((u) => u.nick !== parsed_data.data);
+                    
                     users.push({ ws, nick: parsed_data.data, isAlive: true });
                     broadcast(JSON.stringify({ messageType: 'users', dataArray: users.map((u) => u.nick) }));
                     break;
